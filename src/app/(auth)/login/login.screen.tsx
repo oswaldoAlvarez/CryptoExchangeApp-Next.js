@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Text } from "@/components";
 import { useLoginForm } from "@/hooks";
+import { Eye, EyeOff } from "lucide-react";
 
 export const LoginScreen = () => {
   const { handleSubmit, error } = useLoginForm();
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-900">
@@ -37,12 +39,31 @@ export const LoginScreen = () => {
           className="mb-4 block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           Contraseña
-          <input
-            name="password"
-            type="password"
-            required
-            className="mt-1 w-full rounded border border-gray-300 p-2 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
-          />
+          <div className="relative mt-1">
+            <input
+              name="password"
+              type={showPassword ? "text" : "password"}
+              required
+              className="w-full rounded border border-gray-300 pr-10 p-2 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((v) => !v)}
+              className="absolute inset-y-0 right-0 flex items-center pr-3"
+              aria-label={
+                showPassword ? "Ocultar contraseña" : "Mostrar contraseña"
+              }
+            >
+              {showPassword ? (
+                <EyeOff
+                  size={20}
+                  className="text-gray-500 dark:text-gray-400"
+                />
+              ) : (
+                <Eye size={20} className="text-gray-500 dark:text-gray-400" />
+              )}
+            </button>
+          </div>
         </Text>
         {error && (
           <p className="mb-4 text-sm text-red-600 dark:text-red-400">{error}</p>
