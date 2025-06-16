@@ -4,9 +4,7 @@ import { useState, FormEvent } from "react";
 import { signIn, SignInResponse } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-interface LoginPageProps {}
-
-export default function LoginPage({}: LoginPageProps) {
+export default function LoginPage({}) {
   const router = useRouter();
   const params = useSearchParams();
   const callbackUrl = params.get("callbackUrl") ?? "/";

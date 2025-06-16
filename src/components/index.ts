@@ -1,2 +1,1 @@
-export { LogoutButton } from "./LogoutButton.component";
-export { ThemeToggle } from "./ThemeToggle.component";
+export { Text } from "./Text.component";
