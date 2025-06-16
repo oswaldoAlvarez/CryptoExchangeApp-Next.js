@@ -32,7 +32,7 @@ interface TextProps<T extends React.ElementType = "p">
   className?: string;
 }
 
-export function Text<T extends React.ElementType = "p">({
+export const Text = <T extends React.ElementType = "p">({
   tag,
   size = "base",
   align,
@@ -40,7 +40,7 @@ export function Text<T extends React.ElementType = "p">({
   className,
   children,
   ...rest
-}: TextProps<T>) {
+}: TextProps<T>) => {
   const Component = tag || "p";
 
   const composed = [
@@ -57,4 +57,4 @@ export function Text<T extends React.ElementType = "p">({
       {children}
     </Component>
   );
-}
+};

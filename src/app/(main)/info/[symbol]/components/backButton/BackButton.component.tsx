@@ -10,9 +10,9 @@ export function BackButton() {
   const handleBack = () => router.back();
 
   return (
-    <button onClick={handleBack} className="flex items-center gap-1 mb-4">
+    <button onClick={handleBack} className="flex items-center mb-4">
       <ArrowLeft size={16} />
-      <Text tag="h1">Volver</Text>
+      <Text tag="h1" className="ml-2">Volver</Text>
     </button>
   );
 }

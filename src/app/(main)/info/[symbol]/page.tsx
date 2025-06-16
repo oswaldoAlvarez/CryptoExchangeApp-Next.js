@@ -1,5 +1,5 @@
 import InfoScreen from "./info.screen";
 
-export default function InfoPageClient() {
+export default function Info() {
   return <InfoScreen />;
 }

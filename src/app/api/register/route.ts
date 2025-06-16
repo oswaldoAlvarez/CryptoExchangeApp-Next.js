@@ -5,12 +5,41 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
-  const { email, password, name } = await req.json();
-  const hashPwd = await hash(password, 10);
+  try {
+    const { email, password, name } = await req.json();
 
-  await prisma.user.create({
-    data: { email, name, passwordHash: hashPwd },
-  });
+    if (!email || !password || !name) {
+      return NextResponse.json(
+        { error: "Email, contraseña y nombre son obligatorios" },
+        { status: 400 }
+      );
+    }
 
-  return NextResponse.json({ ok: true });
+    const existing = await prisma.user.findUnique({ where: { email } });
+    if (existing) {
+      return NextResponse.json(
+        { error: "Ya existe un usuario con ese email" },
+        { status: 409 }
+      );
+    }
+
+    const passwordHash = await hash(password, 10);
+    await prisma.user.create({
+      data: {
+        email,
+        name,
+        passwordHash,
+      },
+    });
+
+    return NextResponse.json({ ok: true }, { status: 201 });
+  } catch (err) {
+    console.error("REGISTER ERROR:", err);
+    return NextResponse.json(
+      { error: "Error interno al registrar usuario" },
+      { status: 500 }
+    );
+  } finally {
+    await prisma.$disconnect();
+  }
 }
