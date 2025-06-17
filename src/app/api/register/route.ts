@@ -36,7 +36,7 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error("REGISTER ERROR:", err);
     return NextResponse.json(
-      { error: "Error interno al registrar usuario" },
+      { error: `Error interno al registrar usuario ${err}` },
       { status: 500 }
     );
   } finally {
