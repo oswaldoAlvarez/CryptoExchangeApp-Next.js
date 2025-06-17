@@ -8,7 +8,7 @@
 
 ```bash
 $ git clone https://github.com/your-username/myApp.git  
-$ cd cryptoapp
+$ cd myApp
 ```
 
 ### 2. Install dependencies
