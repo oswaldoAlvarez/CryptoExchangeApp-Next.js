@@ -8,7 +8,7 @@
 
 ```bash
 $ git clone https://github.com/your-username/myApp.git  
-$ cd cryptoapp
+$ cd myApp
 ```
 
 ### 2. Install dependencies
@@ -19,13 +19,12 @@ $ npm install
 
 ### 3. Configure environment variables
 
-Create a file named `` in the project root with:
+Create a file named `.env` in the project root with:
 
 ```env
 # Supabase direct connection (port 5432), SSL required
 DATABASE_URL="postgresql://postgres:pass@localhost:5432/postgres?schema=public"
-
-# NextAuth configuration\NEXTAUTH_URL="http://localhost:3000"  
+NEXTAUTH_URL="http://localhost:3000"
 NEXTAUTH_SECRET="a-very-secure-random-string"
 ```
 
