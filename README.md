@@ -74,4 +74,10 @@ Register at `/register` or login at `/login`.
 - Simplified loading & error state hooks.
 
 > **Benefits:** Modular & testable, responsive with fresh data, rapid development.
+>
+
+You can see the project in https://my-app-oswaldo-2.vercel.app/
+
+design used to replicate [Design](https://www.figma.com/community/file/1380191315027391275/crypto-exchange-ui-design-kit)
+design used to replicate [Design](https://www.figma.com/design/AwbKZk3zrgK513O40t8V1c/Crypto-Exchange-UI-Design-Kit--Community-?node-id=2704-418&p=f&t=ZTlIDnEOUHV4FQhJ-0)
 
