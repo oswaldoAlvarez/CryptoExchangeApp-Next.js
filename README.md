@@ -1,5 +1,9 @@
 # 🚀 MyApp
 
+(To get the local DB running, create a .env file and place the following inside to get the login working locally:
+
+DATABASE_URL="postgresql://postgres:pass@localhost:5432/postgres?schema=public")
+
 ---
 
 ## 🎬 Getting Started
