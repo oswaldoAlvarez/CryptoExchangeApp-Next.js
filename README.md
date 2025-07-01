@@ -1,4 +1,4 @@
-# 🚀 MyApp
+# 🚀 CryptoExchangeApp
 
 (To get the local DB running, create a .env file and place the following inside to get the login working locally:
 
@@ -15,8 +15,8 @@ NEXTAUTH_SECRET="some-string")
 ### 1. Clone the repository
 
 ```bash
-$ git clone https://github.com/your-username/myApp.git  
-$ cd myApp
+$ git clone https://github.com/your-username/CryptoExchangeApp.git  
+$ cd CryptoExchangeApp
 ```
 
 ### 2. Install dependencies
